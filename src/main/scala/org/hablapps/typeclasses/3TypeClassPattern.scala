@@ -103,28 +103,27 @@ object TypeClassPattern {
   }
 
   object Show {
-    // Summoners | Casters
-    def apply[A](implicit ev: Show[A]) = ev
-    def apply[A](a: A)(implicit ev: Show[A]) = ev.write(a)
+    // Write the caster
+    ???
 
-    implicit val intInstance = new Show[Int] {
-      def write(i: Int) = i.toString
-    }
+    // Write an instance for Int
+    implicit val intInstance: Show[Int] = ???
 
-    implicit val stringInstance = new Show[String] {
-      def write(s: String) = s
-    }
+    // Write an instance for String
+    ???
 
+    // Write an instance for Option[A]
+    ???
+
+    // Write the syntax for write
     object syntax {
-      implicit class ShowOps[A](a: A)(implicit ev: Show[A]) {
-        def write = ev.write(a)
-      }
+      ???
     }
   }
 
-  // Using both typeclasses
+  // implement the next function using Show type class.
+  // it must return the first element of the list as a String
   import Show.syntax._
-  def writeFirstOfSortedList[A: Order: Show](l: List[A]): String =
-    quicksortList(l).head.write
+  def writeFirst[A](l: List[A]): String = ???
 
 }
