@@ -1,2 +1,3 @@
-# typeclassesforthemasses
-Workshop Lambda World 2016
+# Type classes for the masses
+
+Lambda World 2016
